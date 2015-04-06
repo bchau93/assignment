@@ -23,23 +23,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
         'emailaddress'=>'required|email',
         'password'=>'required|min:2|max:80',
-        //'confirm'=>'required|min:2|max:80',
+        'confirm'=>'required|same:password',
         //'captcha'=>'required'
 
     ];
 
     public function isValid()
-
     {
 
         $v = Validator::make($this->attributes, static::$rules);
 
-        if($v->passes())
-
+        if( $v->passes() )
         {
-
             return true;
-
         }
 
         $this->messages = $v->messages();
