@@ -39,9 +39,17 @@ class UsersController extends \BaseController
         $this->user->fill($input);
 
         $this->user->emailaddress = Input::get('emailaddress');
+        $pass = Input::get('password');
+        $confirm = Input::get('confirm');
 
-        $this->user->password     = Hash::make(Input::get('password'));
+        if($this->user->password = ""){
+            return Redirect::back()->withInput()->withErrors($this->user->messages);
+        }else if($pass != $confirm){
+            return Redirect::back()->withInput()->withErrors('Passwords do not match!');
+        }else{
+            $this->user->password     = Hash::make(Input::get('password'));
 
+        }
 
 
         if(!($this->user->isValid()))

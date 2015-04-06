@@ -17,10 +17,10 @@
 
     <div>
 
-        {{Form::label('p', 'Password(2-30 chars): ')}}
+        {{Form::label('password', 'Password(2-30 chars): ')}}
 
-        {{Form::text('p')}}
-        {{$errors->first('p', '<span class="error">:message<span>')}}
+        {{Form::text('password')}}
+        {{$errors->first('password', '<span class="error">:message<span>')}}
 
     </div>
 
