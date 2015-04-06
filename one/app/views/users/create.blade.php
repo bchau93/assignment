@@ -11,7 +11,7 @@
         {{Form::label('emailaddress', 'Email Address: ')}}
 
         {{Form::text('emailaddress')}}
-        {{$errors->first('emailaddress', '<span class=”error”>:message<span>')}}
+        {{$errors->first('emailaddress', '<span class="error">:message<span>')}}
 
     </div>
 
@@ -20,7 +20,7 @@
         {{Form::label('password', 'Password(2-30 chars): ')}}
 
         {{Form::text('password')}}
-        {{$errors->first('password')}}
+        {{$errors->first('password', '<span class="error">:message<span>')}}
 
     </div>
 
@@ -29,7 +29,7 @@
         {{Form::label('confirm', 'Confirm password: ')}}
 
         {{Form::text('confirm')}}
-        {{$errors->first('confirm')}}
+        {{$errors->first('confirm', '<span class="error">:message<span>')}}
 
     </div>
 
