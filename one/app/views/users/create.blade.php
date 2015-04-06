@@ -17,10 +17,10 @@
 
     <div>
 
-        {{Form::label('password', 'Password(2-30 chars): ')}}
+        {{Form::label('p', 'Password(2-30 chars): ')}}
 
-        {{Form::text('password')}}
-        {{$errors->first('password', '<span class="error">:message<span>')}}
+        {{Form::text('p')}}
+        {{$errors->first('p', '<span class="error">:message<span>')}}
 
     </div>
 
@@ -38,7 +38,7 @@
         {{Form::label('captcha', 'Type this!: ')}}
         {{HTML::image(Captcha::img(), 'Captcha image')}}
         {{Form::text('captcha')}}
-        {{$errors->first('confirm')}}
+        {{$errors->first('captcha', '<span class="error">:message<span>')}}
 
     </div>
 
