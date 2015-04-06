@@ -35,6 +35,15 @@
 
     <div>
 
+        {{Form::label('captcha', 'Type this: ')}}
+        {{HTML::image(Captcha::img(), 'Captcha image')}}
+        {{Form::text('captcha')}}
+        {{$errors->first('confirm')}}
+
+    </div>
+
+    <div>
+
         {{Form::submit('Create User')}}
 
     </div>
