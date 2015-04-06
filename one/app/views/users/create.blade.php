@@ -35,7 +35,7 @@
 
     <div>
 
-        {{Form::label('captcha', 'Type this: ')}}
+        {{Form::label('captcha', 'Type this!: ')}}
         {{HTML::image(Captcha::img(), 'Captcha image')}}
         {{Form::text('captcha')}}
         {{$errors->first('confirm')}}
